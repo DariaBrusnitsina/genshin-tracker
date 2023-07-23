@@ -1,0 +1,71 @@
+{
+  "characters":
+    {
+      "Noelle": {
+        "name": "Noelle",
+        "ascensions": {
+          "20": [
+            { "type": "ascensionMatherials", "name": "prithivaTopazSliver", "counter": 1 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 3 },
+            { "type": "enhancementMaterials", "name": "damagedMask", "counter": 3 }
+          ],
+          "40": [
+            { "type": "levelUpMaterials", "name": "basaltPillar", "counter": 2 },
+            { "type": "ascensionMatherials", "name": "prithivaTopazFragment", "counter": 3 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 10 },
+            { "type": "enhancementMaterials", "name": "damagedMask", "counter": 15 }
+          ],
+          "50": [
+            { "type": "levelUpMaterials", "name": "basaltPillar", "counter": 4 },
+            { "type": "ascensionMatherials", "name": "prithivaTopazFragment", "counter": 6 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 20 },
+            { "type": "enhancementMaterials", "name": "stainedMask", "counter": 12 }
+          ],
+          "60": [
+            { "type": "levelUpMaterials", "name": "basaltPillar", "counter": 8 },
+            { "type": "ascensionMatherials", "name": "prithivaTopazChunk", "counter": 3 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 30 },
+            { "type": "enhancementMaterials", "name": "stainedMask", "counter": 18 }
+          ],
+          "70": [
+            { "type": "levelUpMaterials", "name": "basaltPillar", "counter": 12 },
+            { "type": "ascensionMatherials", "name": "prithivaTopazChunk", "counter": 6 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 45 },
+            { "type": "enhancementMaterials", "name": "ominousdMask", "counter": 12 }
+          ],
+          "80": [
+            { "type": "levelUpMaterials", "name": "basaltPillar", "counter": 20 },
+            { "type": "ascensionMatherials", "name": "prithivaTopazGemstone", "counter": 6 },
+            { "type": "localSpecialties", "name": "valberry", "counter": 60 },
+            { "type": "enhancementMaterials", "name": "ominousdMask", "counter": 24 }
+          ]
+        }
+      }
+
+    },
+  "ascensionMatherials": {
+    "prithivaTopazSliver": { "name": "Prithiva Topaz Sliver" },
+    "prithivaTopazFragment": { "name": "Prithiva Topaz Fragment" },
+    "prithivaTopazChunk": { "name": "Prithiva Topaz Chunk" },
+    "prithivaTopazGemstone": { "name": "Prithiva Topaz Gemstone" }
+  },
+  "localSpecialties": {
+    "valberry": {  "name":"Valberry" }
+  },
+  "levelUpMaterials": {
+    "basaltPillar": { "name": "Basalt Pillar" }
+  },
+  "enhancementMaterials": {
+    "damagedMask": {  "name": "Damaged Mask" },
+    "stainedMask": {  "name": "Stained Mask" },
+    "ominousdMask": { "name": "Ominous Mask" }
+  },
+  "testLocalData": [
+    [
+      { "charName": "Noelle", "lvl": 20 },
+      { "charName": "Noelle", "lvl": 30 },
+      { "charName": "Noelle", "lvl": 40 },
+      { "charName": "Noelle", "lvl": 60 }
+    ]
+  ]
+}
