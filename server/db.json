@@ -1,7 +1,7 @@
 {
   "characters":
-    {
-      "Noelle": {
+    [
+      {
         "name": "Noelle",
         "ascensions": {
           "20": [
@@ -41,26 +41,31 @@
           ]
         }
       }
-
-    },
-  "ascensionMatherials": {
-    "prithivaTopazSliver": { "name": "Prithiva Topaz Sliver" },
-    "prithivaTopazFragment": { "name": "Prithiva Topaz Fragment" },
-    "prithivaTopazChunk": { "name": "Prithiva Topaz Chunk" },
-    "prithivaTopazGemstone": { "name": "Prithiva Topaz Gemstone" }
-  },
-  "localSpecialties": {
-    "valberry": {  "name":"Valberry" }
-  },
-  "levelUpMaterials": {
-    "basaltPillar": { "name": "Basalt Pillar" }
-  },
-  "enhancementMaterials": {
-    "damagedMask": {  "name": "Damaged Mask" },
-    "stainedMask": {  "name": "Stained Mask" },
-    "ominousdMask": { "name": "Ominous Mask" }
-  },
+    ],
+  "ascensionMatherials": [
+    { "name": "prithivaTopazSliver", "displayName": "Prithiva Topaz Sliver" },
+    { "name": "prithivaTopazFragment", "displayName": "Prithiva Topaz Fragment" },
+    { "name": "prithivaTopazChunk", "displayName": "Prithiva Topaz Chunk" },
+    { "name": "prithivaTopazGemstone", "displayName": "Prithiva Topaz Gemstone" }
+  ],
+  "localSpecialties": [
+    { "name": "valberry", "displayName":"Valberry" }
+  ],
+  "levelUpMaterials": [
+    { "name": "basaltPillar", "displayName": "Basalt Pillar" }
+  ],
+  "enhancementMaterials": [
+    { "name": "damagedMask", "displayName": "Damaged Mask" },
+    { "name": "stainedMask", "displayName": "Stained Mask" },
+    { "name": "ominousdMask", "displayName": "Ominous Mask" }
+  ],
   "testLocalData": [
+    [
+      { "charName": "Noelle", "lvl": 20 },
+      { "charName": "Noelle", "lvl": 30 },
+      { "charName": "Noelle", "lvl": 40 },
+      { "charName": "Noelle", "lvl": 60 }
+    ],
     [
       { "charName": "Noelle", "lvl": 20 },
       { "charName": "Noelle", "lvl": 30 },
