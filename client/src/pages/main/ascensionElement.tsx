@@ -2,12 +2,20 @@ import React from 'react'
 import { type ascensionsElement } from './types'
 import { Avatar, Box, Button } from '@mui/material'
 import PlusOneIcon from '@mui/icons-material/PlusOne'
+import { useAppDispatch, useAppSelector } from 'shared/store/hook'
+import { updateAscensionCounter } from 'shared/store/myAscensionMatherials'
 
 interface AscensionElementProps {
   ascension: ascensionsElement
 }
 
 const AscensionElement: React.FC<AscensionElementProps> = ({ ascension }): JSX.Element => {
+  const dispatch = useAppDispatch()
+  const myAscensionMatherials = useAppSelector(state => state.myAscensionMatherials)
+  const currentAscension = myAscensionMatherials?.find(a => a.name === ascension.name)
+
+  const isEnough = currentAscension !== null && currentAscension !== undefined ? currentAscension?.counter >= ascension.counter : false
+
   return (
     <Box sx={{ margin: '15px', width: '40%', bgcolor: 'white', borderRadius: '5px', padding: '5px' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', columnGap: '5%' }}>
@@ -16,8 +24,8 @@ const AscensionElement: React.FC<AscensionElementProps> = ({ ascension }): JSX.E
       </Box>
 
       <Box sx={{ display: 'flex', alignItems: 'center', columnGap: '5%' }}>
-        <p>Counter: 0/{ascension.counter}</p>
-        <Button variant="outlined" startIcon={<PlusOneIcon />}>Add</Button>
+        <p>Counter: {currentAscension?.counter}/{ascension.counter}</p>
+        <Button disabled={isEnough} variant="outlined" startIcon={<PlusOneIcon />} onClick={ () => dispatch(updateAscensionCounter(ascension.name)) }>Add</Button>
       </Box>
 
     </Box>

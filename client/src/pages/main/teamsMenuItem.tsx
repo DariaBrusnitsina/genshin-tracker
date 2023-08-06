@@ -17,7 +17,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(() => ({
   }
 }))
 
-const TeamItem: React.FC<TeamItemProps> = ({ team }): JSX.Element => {
+const TeamMenuItem: React.FC<TeamItemProps> = ({ team }): JSX.Element => {
   return (
     <Stack direction="row" spacing={2} >
       {team.map((char) =>
@@ -36,4 +36,4 @@ const TeamItem: React.FC<TeamItemProps> = ({ team }): JSX.Element => {
   )
 }
 
-export default TeamItem
+export default TeamMenuItem

@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, Container, ToggleButton, ToggleButtonGroup } from '@mui/material'
 // import { charactersAPI } from 'shared/api/characters'
 // import { LocalDataAPI } from 'shared/api/testLocalData'
 import { api } from './fakeapi'
-import type { ascensionsElement, testLocalDataType } from './types'
-import TeamItem from './teamItem'
+import type { ascensionsElement } from './types'
+import TeamItem from './teamsMenuItem'
 import AddIcon from '@mui/icons-material/Add'
-import TeamBoard from './teamBoard'
+import CharactersAscensionsBoard from './charactersAscensionsBoard'
+import { useAppSelector } from 'shared/store/hook'
 
 interface ascensionsLvl {
   lvl: number
@@ -21,13 +21,10 @@ interface characters {
 
 const TestPage = (): React.ReactNode => {
   const [characters, setCharacters] = useState<characters[] | undefined>(undefined)
-  const [testLocalData, setTestLocalData] = useState<testLocalDataType[][] | undefined>(undefined)
+  const myTeams = useAppSelector(state => state.myTeams)
 
   useEffect(() => {
-    setTestLocalData(api.testLocalData)
     setCharacters(api.characters)
-  //   charactersAPI.getCharacters().then((res) => { setCharacters(res) })
-  //   LocalDataAPI.getTestLocalData().then((res) => { setTestLocalData(res) })
   }, [])
   console.log(characters)
 
@@ -48,11 +45,11 @@ const TestPage = (): React.ReactNode => {
           onChange={handleChange}
         >
           <h2>Select a team</h2>
-          {testLocalData?.map((team, index) => <ToggleButton value={index} key={index}><TeamItem key={index} team={team}/></ToggleButton>)}
+          {myTeams?.map((team, index) => <ToggleButton value={index} key={index}><TeamItem key={index} team={team}/></ToggleButton>)}
         </ToggleButtonGroup>
         <Button variant="text" startIcon={<AddIcon />}>Add new team</Button>
       </Box>
-      <Box>{testLocalData !== undefined ? <TeamBoard key={view} team={testLocalData[view]}/> : <p>net</p>}</Box>
+      <Box>{myTeams !== undefined ? <CharactersAscensionsBoard key={view} team={myTeams[view]} index={view}/> : <p>net</p>}</Box>
     </Card>
   </Container>
   )
