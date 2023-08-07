@@ -76,19 +76,5 @@ export const api = {
     { name: 'damagedMask', displayName: 'Damaged Mask' },
     { name: 'stainedMask', displayName: 'Stained Mask' },
     { name: 'ominousdMask', displayName: 'Ominous Mask' }
-  ],
-  testLocalData: [
-    [
-      { charName: 'Noelle', lvl: 40 },
-      { charName: 'Noelle', lvl: 30 },
-      { charName: 'Noelle', lvl: 21 },
-      { charName: 'Noelle', lvl: 60 }
-    ],
-    [
-      { charName: 'Noelle', lvl: 20 },
-      { charName: 'Noelle', lvl: 33 },
-      { charName: 'Noelle', lvl: 40 },
-      { charName: 'Noelle', lvl: 60 }
-    ]
   ]
 }

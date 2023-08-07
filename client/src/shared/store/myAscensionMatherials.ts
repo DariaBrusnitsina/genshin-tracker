@@ -32,13 +32,13 @@ const myAscensionMatherialsSlice = createSlice({
   name: 'myAscensionMatherials',
   initialState,
   reducers: {
-    // addTodo(state, action) {
-    //     state.characters.push({
-    //       id: new Date().toISOString(),
-    //       text: action.payload.text,
-    //       completed: false,
-    //     });
-    // },
+    updateAscensionsAfterRise (state, action) {
+      const ascension = state?.find(a => a.name === action.payload.name)
+      if (ascension !== null && ascension !== undefined) {
+        ascension.counter = ascension?.counter - action.payload.counter
+      }
+      localStorage.setItem('myAscensionMatherials', JSON.stringify(state))
+    },
     updateAscensionCounter (state, action) {
       const ascension = state?.find(a => a.name === action.payload)
       if (ascension !== null && ascension !== undefined) {
@@ -52,6 +52,6 @@ const myAscensionMatherialsSlice = createSlice({
   }
 })
 
-export const { updateAscensionCounter } = myAscensionMatherialsSlice.actions
+export const { updateAscensionCounter, updateAscensionsAfterRise } = myAscensionMatherialsSlice.actions
 
 export default myAscensionMatherialsSlice.reducer

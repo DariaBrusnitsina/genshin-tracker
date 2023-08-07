@@ -10,10 +10,16 @@ interface CharactersAscensionsBoardProps {
 }
 
 const CharactersAscensionsBoard: React.FC<CharactersAscensionsBoardProps> = ({ team, index }): JSX.Element => {
+  console.log(team)
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }} >
+    <>
+    <Box>Needed at the moment</Box>
+    <Box>Need in general</Box>
+
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
       {team?.map((char) => <CharacterCard key={char.charName} char={char} index={index} />)}
     </Box>
+    </>
   )
 }
 
