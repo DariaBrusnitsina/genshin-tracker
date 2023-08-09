@@ -30,7 +30,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ char, index }): JSX.Eleme
   }
 
   function raiseChar (): void {
-    dispatch(updateChar({ id: char.id, index }))
+    dispatch(updateChar(char))
 
     if (ascensionsLvlSet !== undefined) {
       for (let i = 0; i < ascensionsLvlSet?.length; i++) {
@@ -57,7 +57,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ char, index }): JSX.Eleme
 
       <Box sx={{ display: 'flex', alignItems: 'center', paddingX: '10px', columnGap: '5%' }}>
           <h4>Level: {char.lvl}</h4>
-          {ascensionsLvlSet !== undefined ? <Button variant="outlined" disabled={isComplete !== true} onClick={raiseChar} >Raise</Button> : <Button onClick={() => dispatch(updateChar({ id: char.id, index }))} variant="outlined" startIcon={<PlusOneIcon />}>Level Up</Button>}
+          {ascensionsLvlSet !== undefined ? <Button variant="outlined" disabled={isComplete !== true} onClick={raiseChar} >Raise</Button> : <Button onClick={() => dispatch(updateChar(char))} variant="outlined" startIcon={<PlusOneIcon />}>Level Up</Button>}
       </Box>
 
       {ascensionsLvlSet !== undefined &&

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const myTeamsDefault = [
   [
-    { id: '12411', charName: 'Noelle', lvl: 40 },
+    { id: '12411', charName: 'Xiangling', lvl: 80 },
     { id: '221351', charName: 'Noelle', lvl: 30 },
     { id: '32131', charName: 'Noelle', lvl: 21 },
     { id: '4231245', charName: 'Noelle', lvl: 60 }
@@ -45,18 +45,26 @@ const myTeamsSlice = createSlice({
     //     // },
     updateChar (state, action) {
       if (state !== undefined) {
-        const currentTeam = state[action.payload.index]
-        const char = currentTeam?.find(c => c.id === action.payload.id)
-        if (char !== null && char !== undefined) {
-          char.lvl = char.lvl + 1
+        for (let i = 0; i < state.length; i++) {
+          for (let j = 0; j < state[i].length; j++) {
+            if (state[i][j].charName === action.payload.charName) {
+              state[i][j].lvl = Number(action.payload.lvl) + 1
+            }
+          }
         }
-        localStorage.setItem('myTeams', JSON.stringify(state))
-      }
 
-      // if (ascension !== null && ascension !== undefined) {
-      //   ascension.counter = ascension?.counter + 1
-      // }
-      // localStorage.setItem('myAscensionMatherials', JSON.stringify(state))
+        // const currentTeam = state[action.payload.index]
+        // const char = currentTeam?.find(c => c.id === action.payload.id)
+
+        // if (char !== null && char !== undefined) {
+        //   char.lvl = char.lvl + 1
+        // }
+        // localStorage.setItem('myTeams', JSON.stringify(state))
+
+        // for (let i = 0; i < state.length; i++) {
+        //   console.log(state[i])
+        // }
+      }
     }
     //     // removeTodo(state, action) {
     //     //     state.todos = state.todos.filter(todo => todo.id !== action.payload.id);
