@@ -5,11 +5,47 @@ const myAscensionMatherials = [
   { name: 'prithivaTopazFragment', counter: 0 },
   { name: 'prithivaTopazChunk', counter: 0 },
   { name: 'prithivaTopazGemstone', counter: 0 },
+  { name: 'agnidusAgateSliver', counter: 0 },
+  { name: 'agnidusAgateFragment', counter: 0 },
+  { name: 'agnidusAgateChunk', counter: 0 },
+  { name: 'agnidusAgateGemstone', counter: 0 },
+  { name: 'varunadaLazuriteSliver', counter: 0 },
+  { name: 'varunadaLazuriteFragment', counter: 0 },
+  { name: 'varunadaLazuriteChunk', counter: 0 },
+  { name: 'varunadaLazuriteGemstone', counter: 0 },
+
   { name: 'valberry', counter: 0 },
+  { name: 'jueyunChili', counter: 0 },
+  { name: 'silkFlower', counter: 0 },
+  { name: 'amakumoFruit', counter: 0 },
+  { name: 'windwheelAster', counter: 0 },
+  { name: 'sangoPearl', counter: 0 },
+  { name: 'glazeLily', counter: 0 },
+  { name: 'corLapis', counter: 0 },
+
   { name: 'basaltPillar', counter: 0 },
+  { name: 'everflameSeed', counter: 0 },
+  { name: 'сleansingHeart', counter: 0 },
+  { name: 'stormBeads', counter: 0 },
+  { name: 'perpetualHeart', counter: 0 },
+  { name: 'riftbornRegalia', counter: 0 },
+
   { name: 'damagedMask', counter: 0 },
   { name: 'stainedMask', counter: 0 },
-  { name: 'ominousdMask', counter: 0 }
+  { name: 'ominousdMask', counter: 0 },
+  { name: 'slimeCondensate', counter: 0 },
+  { name: 'slimeSecretions', counter: 0 },
+  { name: 'slimeConcentrate', counter: 0 },
+
+  { name: 'oldHandguard', counter: 0 },
+  { name: 'kageuchiHandguard', counter: 0 },
+  { name: 'famedHandguard', counter: 0 },
+  { name: 'treasureHoarderInsignia', counter: 0 },
+  { name: 'silverRavenInsignia', counter: 0 },
+  { name: 'goldenRavenInsignia', counter: 0 },
+  { name: 'spectralHusk', counter: 0 },
+  { name: 'spectralHeart', counter: 0 },
+  { name: 'spectralNucleus', counter: 0 }
 ]
 
 export interface ImyAscensionMatherialsElement {

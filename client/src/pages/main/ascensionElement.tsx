@@ -19,7 +19,7 @@ const AscensionElement: React.FC<AscensionElementProps> = ({ ascension }): JSX.E
   return (
     <Box sx={{ margin: '15px', width: '40%', bgcolor: 'white', borderRadius: '5px', padding: '5px' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', columnGap: '5%' }}>
-        <Avatar alt={ascension.name} src="/broken-image.jpg" />
+        <Avatar alt={ascension.name} variant='square' src="/broken-image.jpg" />
         <h4>{ascension.name}</h4>
       </Box>
 

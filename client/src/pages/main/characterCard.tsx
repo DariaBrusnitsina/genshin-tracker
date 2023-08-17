@@ -1,8 +1,7 @@
 import React from 'react'
 import { api } from './fakeapi'
-import { Avatar, Box, Button, IconButton, Paper } from '@mui/material'
+import { Avatar, Box, Button, Divider, Paper, Typography } from '@mui/material'
 import { type ascensionsElement, type testLocalDataType } from './types'
-import SettingsIcon from '@mui/icons-material/Settings'
 import PlusOneIcon from '@mui/icons-material/PlusOne'
 import AscensionElement from './ascensionElement'
 import { useAppDispatch, useAppSelector } from 'shared/store/hook'
@@ -42,22 +41,16 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ char, index }): JSX.Eleme
   }
 
   return (
-    <Paper variant="outlined" sx={ascensionsLvlSet !== undefined ? { margin: '10px' } : { margin: '10px', order: '-1', width: '45%' }} >
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', padding: '10px', columnGap: '10%' }}>
-              <Avatar alt={char.charName} src="/broken-image.jpg" />
-              <h3>{char.charName}</h3>
-            </Box>
-            <div>
-            <IconButton aria-label="setting">
-              <SettingsIcon />
-            </IconButton>
-            </div>
-      </Box>
+    <Paper variant="outlined" sx={ascensionsLvlSet !== undefined ? { margin: '10px', borderRadius: '15px' } : { margin: '10px', order: '-1', width: '45%', borderRadius: '15px' }} >
+      <Box sx={{ display: 'flex', alignItems: 'center', padding: '10px', columnGap: '10px' }}>
+        <Avatar alt={char.charName} sx={{ width: 65, height: 65 }} src="https://genshindb.org/wp-content/uploads/2022/10/Albedo.webp" />
 
-      <Box sx={{ display: 'flex', alignItems: 'center', paddingX: '10px', columnGap: '5%' }}>
-          <h4>Level: {char.lvl}</h4>
-          {ascensionsLvlSet !== undefined ? <Button variant="outlined" disabled={isComplete !== true} onClick={raiseChar} >Raise</Button> : <Button onClick={() => dispatch(updateChar(char))} variant="outlined" startIcon={<PlusOneIcon />}>Level Up</Button>}
+        <Typography variant="h6" sx={{ fontWeight: 'bold' }} noWrap>{char.charName}</Typography>
+      </Box>
+      <Divider />
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', columnGap: '5%' }}>
+        <Typography variant="subtitle1" noWrap><span style={{ fontWeight: 'bold' }}>Level:</span> {char.lvl}</Typography>
+        {ascensionsLvlSet !== undefined ? <Button variant="text" disabled={isComplete !== true} onClick={raiseChar} >Raise</Button> : <Button onClick={() => dispatch(updateChar(char))} variant="text" startIcon={<PlusOneIcon />}>Level Up</Button>}
       </Box>
 
       {ascensionsLvlSet !== undefined &&
