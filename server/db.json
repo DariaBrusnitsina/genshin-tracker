@@ -3,6 +3,7 @@
     [
       {
         "name": "Noelle",
+        "img": "",
         "ascensions": {
           "20": [
             { "type": "ascensionMatherials", "name": "prithivaTopazSliver", "counter": 1 },

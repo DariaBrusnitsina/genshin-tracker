@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Button, Card, Container, Modal, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { Box, Button, Modal, ToggleButton, ToggleButtonGroup } from '@mui/material'
 // import { charactersAPI } from 'shared/api/characters'
 // import { LocalDataAPI } from 'shared/api/testLocalData'
 import { api } from './fakeapi'
@@ -52,8 +52,8 @@ const TestPage = (): React.ReactNode => {
   }
 
   return (
-  <><Container>
-      <Card sx={{ display: 'flex', padding: '25px', columnGap: '10%' }}>
+  <>
+      <Box sx={{ display: 'flex', padding: '25px', columnGap: '10%' }}>
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
           <ToggleButtonGroup
             orientation="vertical"
@@ -67,8 +67,7 @@ const TestPage = (): React.ReactNode => {
           <Button onClick={handleOpen} variant="text" startIcon={<AddIcon />}>Add new team</Button>
         </Box>
         <Box>{myTeams !== undefined ? <CharactersAscensionsBoard key={view} team={myTeams[view]} index={view} /> : <p>net</p>}</Box>
-      </Card>
-    </Container>
+      </Box>
 
     <div>
         <Modal

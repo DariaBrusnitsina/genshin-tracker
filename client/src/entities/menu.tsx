@@ -1,5 +1,4 @@
-// Либо использовать @loadable/component, в рамках туториала - некритично
-import React, { lazy } from 'react'
+import * as React from 'react'
 import { styled, useTheme, type Theme, type CSSObject } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import MuiDrawer from '@mui/material/Drawer'
@@ -19,17 +18,6 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import InboxIcon from '@mui/icons-material/MoveToInbox'
 import MailIcon from '@mui/icons-material/Mail'
-import { Route, Routes } from 'react-router'
-
-const TestPage = lazy(async () => await import('./main'))
-
-// export const Routing = (): JSX.Element => {
-//   return (
-//         <Routes>
-//             <Route path="/" element={<TestPage/>} />
-//         </Routes>
-//   )
-// }
 
 const drawerWidth = 240
 
@@ -101,8 +89,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     })
   })
 )
-// const Routing = (): JSX.Element =>
-const Routing = (): JSX.Element => {
+
+export default function MiniDrawer (children: Element): React.ReactNode {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
@@ -195,12 +183,8 @@ const Routing = (): JSX.Element => {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <Routes>
-             <Route path="/" element={<TestPage/>} />
-      </Routes>
+
       </Box>
     </Box>
   )
 }
-
-export default Routing

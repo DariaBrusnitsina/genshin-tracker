@@ -2,29 +2,25 @@ import { Box } from '@mui/material'
 import React from 'react'
 
 interface NeedAscensionsNowProps {
-  cathegory: IneedRes
+  ascension: IAscension
   key: string
 }
-interface IneedRes {
-  type: string
-  set: arr[]
-}
-
-interface arr {
+interface IAscension {
   name: string
   need: number
   have: number
+  type: string
 }
 
-const NeedAscensionsNow: React.FC<NeedAscensionsNowProps> = ({ cathegory }): JSX.Element => {
+const NeedAscensionsNow: React.FC<NeedAscensionsNowProps> = ({ ascension }): JSX.Element => {
   return (
     <div>
-      <h4>{cathegory.type}</h4>
-      {cathegory?.set.map((a) =>
-      <Box key={a.name} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', bgcolor: '#adadad', borderRadius: '15px', paddingX: '5px', marginY: '5px' }}>
-        <p>{a.name}</p>
-        <p>{a.have} / {a.need}</p>
-      </Box>)}
+      <Box >
+        <p>{ascension.name}</p>
+        <p>{ascension.have} / {ascension.need}</p>
+        <h4>{ascension.type}</h4>
+
+      </Box>
     </div>
   )
 }
